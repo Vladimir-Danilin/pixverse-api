@@ -9,11 +9,12 @@ requires-python = "<4.0,>=3.11"
 dependencies = [
     "fastapi",
     "uvicorn[standard]",
+    "python-multipart",
     "asyncpg",
     "sqlalchemy",
     "alembic",
     "httpx",
-    "aiogram"
+    "aiogram",
 ]
 
 [tool.uv]
