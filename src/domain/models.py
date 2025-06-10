@@ -1,14 +1,14 @@
 from pydantic import BaseModel
 
 
-class TextToVideoRequest(BaseModel):
+class TextToVideo(BaseModel):
     prompt: str
 
 
-class ImageToVideoRequest(BaseModel):
+class ImageToVideo(BaseModel):
     prompt: str
     image_data: bytes
 
 
-class GenerationStatusRequest(BaseModel):
+class GenerationStatus(BaseModel):
     video_id: str
