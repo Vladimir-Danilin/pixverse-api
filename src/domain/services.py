@@ -21,8 +21,8 @@ class VideoGenerationService:
 
     async def generate_from_image(self, request: dict, image: UploadFile) -> dict:
         image_bytes = await image.read()
-        test = ImageToVideo(**request, image_data=image_bytes)
-        return await self.image_to_video_cmd.execute(test)
+        model = ImageToVideo(prompt=request["prompt"], image_data=image_bytes)
+        return await self.image_to_video_cmd.execute(model)
 
     async def get_status(self, request: GenerationStatus) -> dict:
         return await self.status_query.execute(request.video_id)
