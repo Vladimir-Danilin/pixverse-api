@@ -1,4 +1,5 @@
 from fastapi import Query
+from fastapi.params import Path
 from pydantic import BaseModel, Field
 
 
@@ -17,4 +18,4 @@ class ImageToVideoRequest(BaseModel):
 class GenerationStatusRequest(BaseModel):
     app_bundle_id: str = Field(...)
     apphud_user_id: str = Field(...)
-    video_id: str = Field(..., description="ID видео, полученное при запросе на его генерации")
+    video_id: str = Field(Path(..., description="ID видео, полученное при запросе на его генерации"), description="ID видео, полученное при запросе на его генерации")
