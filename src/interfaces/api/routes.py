@@ -1,5 +1,3 @@
-import uuid
-
 from fastapi import APIRouter, Request, Depends, UploadFile, File
 
 from src.domain.models import User
