@@ -4,7 +4,6 @@ from typing import Optional
 
 class GenerationResponse(BaseModel):
     generation_id: Optional[str] = Field(default=None)
-    message: Optional[str] = Field(default=None)
 
 
 class StatusResponse(BaseModel):

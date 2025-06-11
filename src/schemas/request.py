@@ -5,13 +5,13 @@ from pydantic import BaseModel, Field
 class TextToVideoRequest(BaseModel):
     app_bundle_id: str = Field(...)
     apphud_user_id: str = Field(...)
-    prompt: str = Field(Query(description="Промпт который передаётся модели для генерации видео"), min_length=1, max_length=2048)
+    prompt: str = Field(Query(description="Промпт, передаётся модели для генерации видео"), min_length=1, max_length=2048)
 
 
 class ImageToVideoRequest(BaseModel):
     app_bundle_id: str = Field(...)
     apphud_user_id: str = Field(...)
-    prompt: str = Field(Query(description="Промпт который передаётся модели для генерации видео"), min_length=1, max_length=2048)
+    prompt: str = Field(Query(description="Промпт, передаётся модели для генерации видео"), min_length=1, max_length=2048)
 
 
 class GenerationStatusRequest(BaseModel):
