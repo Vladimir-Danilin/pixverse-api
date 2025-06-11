@@ -1,0 +1,32 @@
+version: "3.9"
+networks:
+  prod:
+
+services:
+  app:
+    build: .
+    container_name: app_container
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    networks:
+      - prod
+
+  db:
+    image: postgres:15
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres_password
+      POSTGRES_DB: PixverseDB
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - prod
+
+volumes:
+  postgres_data:
